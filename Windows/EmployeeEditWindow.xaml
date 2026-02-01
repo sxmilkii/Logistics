@@ -1,0 +1,65 @@
+﻿<Window x:Class="LogisticsWPF.Windows.EmployeeEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Сотрудник"
+        Width="400"
+        Height="580"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="20">
+
+            <TextBlock Text="Фамилия"/>
+            <TextBox x:Name="SurnameTextBox"/>
+
+            <TextBlock Text="Имя" Margin="0,10,0,0"/>
+            <TextBox x:Name="NameTextBox"/>
+
+            <TextBlock Text="Отчество" Margin="0,10,0,0"/>
+            <TextBox x:Name="MiddleNameTextBox"/>
+
+            <TextBlock Text="Телефон" Margin="0,10,0,0"/>
+            <TextBox x:Name="PhoneTextBox"/>
+
+            <TextBlock Text="Должность" Margin="0,15,0,0"/>
+            <ComboBox x:Name="PositionComboBox"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="PositionID"/>
+
+            <TextBlock Text="Отдел" Margin="0,10,0,0"/>
+            <ComboBox x:Name="DepartmentComboBox"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="DepartmentID"/>
+
+            <TextBlock Text="Квалификация" Margin="0,10,0,0"/>
+            <ComboBox x:Name="QualificationComboBox"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="QualificationID"/>
+
+            <TextBlock Text="Тип оплаты" Margin="0,10,0,0"/>
+            <ComboBox x:Name="SalaryTypeComboBox"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="SalaryTypeID"/>
+
+            <TextBlock Text="Статус" Margin="0,10,0,0"/>
+            <ComboBox x:Name="StatusComboBox"
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="EmployeeStatusID"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0,20,0,0">
+                <Button Content="Сохранить"
+                        Width="100"
+                        Height="25"
+                        Click="Save_Click"/>
+                <Button Content="Отмена"
+                        Width="100"
+                        Height="25"
+                        Margin="10,0,0,0"
+                        Click="Cancel_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

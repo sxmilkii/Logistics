@@ -1,0 +1,38 @@
+﻿<Window x:Class="LogisticsWPF.Windows.MaterialEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование материала" Height="490" Width="400"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="Код:"/>
+            <TextBox x:Name="CodeTextBox"/>
+
+            <TextBlock Text="Наименование:" Margin="0,10,0,0"/>
+            <TextBox x:Name="NameTextBox"/>
+
+            <TextBlock Text="Тип материала:" Margin="0,10,0,0"/>
+            <ComboBox x:Name="TypeComboBox" DisplayMemberPath="Name" SelectedValuePath="MaterialTypeID"/>
+
+            <TextBlock Text="Ед. измерения:" Margin="0,10,0,0"/>
+            <ComboBox x:Name="UnitComboBox" DisplayMemberPath="Name" SelectedValuePath="UnitID"/>
+
+            <TextBlock Text="Минимальный остаток:" Margin="0,10,0,0"/>
+            <TextBox x:Name="MinStockTextBox"/>
+
+            <TextBlock Text="Рыночная цена:" Margin="0,10,0,0"/>
+            <TextBox x:Name="MarketPriceTextBox"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Margin="0,10,0,0">
+            <Button Content="Сохранить" Width="80" Margin="0,0,10,0" Click="SaveButton_Click" Height="30"/>
+            <Button Content="Отмена" Width="80" Click="CancelButton_Click" Height="30"/>
+        </StackPanel>
+    </Grid>
+</Window>

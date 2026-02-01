@@ -1,0 +1,41 @@
+﻿<Page x:Class="LogisticsWPF.Pages.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Сотрудники">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <TextBlock Text="Справочник сотрудники" FontSize="22" FontWeight="Bold" 
+                       Foreground="{DynamicResource PrimaryColor}" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="Добавить" Width="85" Height="25" Click="Add_Click"/>
+                <Button Content="Редактировать" Width="100" Height="25" Margin="10,0" Click="Edit_Click"/>
+                <Button Content="Удалить" Width="85" Height="25" Click="Delete_Click"/>
+            </StackPanel>
+
+            <DataGrid x:Name="EmployeesGrid"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  ColumnWidth="*"
+                  HorizontalAlignment="Stretch">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}"/>
+                    <DataGridTextColumn Header="Должность" Binding="{Binding Positions.Name}"/>
+                    <DataGridTextColumn Header="Отдел" Binding="{Binding Departments.Name}"/>
+                    <DataGridTextColumn Header="Квалификация" Binding="{Binding Qualifications.Name}"/>
+                    <DataGridTextColumn Header="Ставка" Binding="{Binding SalaryTypes.Name}"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding EmployeeStatuses.Name}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,38 @@
+﻿<Page x:Class="LogisticsWPF.Pages.ProductionOrdersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Производственные заказы">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <TextBlock Text="Заказы" FontSize="22" FontWeight="Bold" 
+                       Foreground="{DynamicResource PrimaryColor}" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="Создать заказ" Width="150" Height="25" Click="AddOrder_Click"/>
+                <Button Content="Редактировать" Width="150" Height="25" Margin="10,0" Click="EditOrder_Click"/>
+                <Button Content="Обновить статус" Width="150" Height="25" Margin="10,0" Click="UpdateStatus_Click"/>
+            </StackPanel>
+
+            <DataGrid x:Name="OrdersGrid"
+                  Grid.Row="1"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  CanUserAddRows="False"
+                  HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Клиент" Binding="{Binding Clients.Name}" Width="*"/>
+                    <DataGridTextColumn Header="Продукт" Binding="{Binding Products.Name}" Width="*"/>
+                    <DataGridTextColumn Header="Кол-во" Binding="{Binding Quantity}" Width="*"/>
+                    <DataGridTextColumn Header="Приоритет" Binding="{Binding Priority}" Width="*"/>
+                    <DataGridTextColumn Header="Дедлайн" Binding="{Binding Deadline, StringFormat=d}" Width="*"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding ProductionOrderStatuses.Name}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

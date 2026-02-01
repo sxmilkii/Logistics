@@ -1,0 +1,42 @@
+﻿<Window x:Class="LogisticsWPF.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogisticsWPF"
+        mc:Ignorable="d"
+        Title="Logistics WPF" Height="600" Width="1000"
+        Background="{DynamicResource BackgroundColor}">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0" Background="{DynamicResource PrimaryColor}">
+            <StackPanel DockPanel.Dock="Top">
+                <TextBlock Text="Меню" 
+                           FontFamily="{DynamicResource AppFont}" 
+                           FontSize="20" 
+                           Foreground="White" 
+                           Margin="10"
+                           HorizontalAlignment="Center"/>
+                <Button Content="Продукция" Margin="10" Click="ProductsButton_Click" Height="25"/>
+                <Button Content="Материалы" Margin="10" Click="MaterialsButton_Click" Height="25"/>
+                <Button Content="Поставщики" Margin="10" Click="SuppliersButton_Click" Height="25"/>
+                <Button Content="Сотрудники" Margin="10" Click="EmployeesButton_Click" Height="25"/>
+                <Button Content="Оборудование" Margin="10" Height="25" Click="EquipmentButton_Click"/>
+                <Button Content="Закупки" Margin="10" Height="25" Click="PurchasesButton_Click"/>
+                <Button Content="Производственные заказы" Margin="10" Height="25" Click="ProductionOrdersButton_Click"/>
+            </StackPanel>
+
+            <Button Content="Выйти" 
+                    DockPanel.Dock="Bottom"
+                    Margin="10"
+                    Height="30"
+                    Click="LogoutButton_Click"/>
+        </DockPanel>
+
+        <Frame Grid.Column="1" Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

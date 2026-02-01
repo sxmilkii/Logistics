@@ -1,0 +1,31 @@
+﻿<Page x:Class="LogisticsWPF.Pages.MaterialsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Материалы">
+
+    <Grid Background="{DynamicResource BackgroundColor}">
+        <StackPanel Margin="10">
+            <TextBlock Text="Справочник материалов" FontSize="22" FontWeight="Bold" 
+                       Foreground="{DynamicResource PrimaryColor}" Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Button Content="Добавить" Width="80" Margin="0,0,10,0" Click="AddButton_Click" Height="25"/>
+                <Button Content="Редактировать" Width="100" Margin="0,0,10,0" Click="EditButton_Click" Height="25"/>
+                <Button Content="Удалить" Width="80" Click="DeleteButton_Click" Height="25"/>
+            </StackPanel>
+
+            <DataGrid x:Name="MaterialsDataGrid" AutoGenerateColumns="False" Height="500"
+                      CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Код" Binding="{Binding Code}" Width="*"/>
+                    <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" Width="2*"/>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding MaterialTypeName}" Width="*"/>
+                    <DataGridTextColumn Header="Ед. изм." Binding="{Binding UnitName}" Width="*"/>
+                    <DataGridTextColumn Header="Мин. остаток" Binding="{Binding MinStock}" Width="*"/>
+                    <DataGridTextColumn Header="Рыночная цена" Binding="{Binding MarketPrice}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,38 @@
+﻿<Window x:Class="LogisticsWPF.Windows.PurchaseOrderEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Заказ поставщику"
+        Width="400"
+        Height="420"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <StackPanel Margin="20">
+
+        <TextBlock Text="Поставщик"/>
+        <ComboBox x:Name="SupplierComboBox"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="SupplierID"/>
+
+        <TextBlock Text="Склад" Margin="0,10,0,0"/>
+        <ComboBox x:Name="WarehouseComboBox"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="WarehouseID"/>
+
+        <TextBlock Text="Ответственный" Margin="0,10,0,0"/>
+        <ComboBox x:Name="EmployeeComboBox"
+                  DisplayMemberPath="FullName"
+                  SelectedValuePath="EmployeeID"/>
+
+        <TextBlock Text="Ожидаемая дата" Margin="0,10,0,0"/>
+        <DatePicker x:Name="ExpectedDatePicker"/>
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+            <Button Content="Сохранить" Width="100" Height="25" Click="Save_Click"/>
+            <Button Content="Отмена" Width="100" Height="25" Margin="10,0,0,0" Click="Cancel_Click"/>
+        </StackPanel>
+
+    </StackPanel>
+</Window>

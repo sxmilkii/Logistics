@@ -1,0 +1,35 @@
+﻿<Window x:Class="LogisticsWPF.Windows.SupplierEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование поставщика" Height="440" Width="400"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="ИНН:"/>
+            <TextBox x:Name="INNTextBox"/>
+
+            <TextBlock Text="Наименование:" Margin="0,10,0,0"/>
+            <TextBox x:Name="NameTextBox"/>
+
+            <TextBlock Text="Email:" Margin="0,10,0,0"/>
+            <TextBox x:Name="EmailTextBox"/>
+
+            <TextBlock Text="Надёжность (0-5):" Margin="0,10,0,0"/>
+            <TextBox x:Name="ReliabilityTextBox"/>
+
+            <TextBlock Text="Условия оплаты:" Margin="0,10,0,0"/>
+            <TextBox x:Name="PaymentTermsTextBox"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Margin="0,10,0,0">
+            <Button Content="Сохранить" Width="80" Margin="0,0,10,0" Click="SaveButton_Click" Height="25"/>
+            <Button Content="Отмена" Width="80" Click="CancelButton_Click" Height="25"/>
+        </StackPanel>
+    </Grid>
+</Window>
